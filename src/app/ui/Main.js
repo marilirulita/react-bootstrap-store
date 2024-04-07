@@ -1,6 +1,6 @@
 export default function Main() {
   return (
-    <div></div>
+    <div className="container-fluid p-0"></div>
   )
 }
 
