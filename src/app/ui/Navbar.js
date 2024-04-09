@@ -1,6 +1,10 @@
+'use client'
+
 import Image from "next/image";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function NavBar() {
+
   return (
     <div>
     <div className="div-head fixed-top mb-5">
@@ -137,59 +141,27 @@ export default function NavBar() {
     </div>
     <form className="form-inline" action="./results-page.html" method="get">
       <div className="input-group mb-1 mx-2">
-        <div className="input-group-prepend">
-          <button
-            type="button"
-            name="button"
-            className="dropdown-toggle but-drop"
-            data-toggle="dropdown"
-          >
+        <Dropdown className="input-group-prepend">
+          <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle but-drop">
             Todos los productos
-          </button>
-          <div className="dropdown-menu nav-drop">
-            <a href="./results-page.html" className="dropdown-item">
-              Blusas
-            </a>
-            <a href="./results-page.html" className="dropdown-item">
-              Camisas
-            </a>
-            <a href="./results-page.html" className="dropdown-item">
-              Interior
-            </a>
-            <a href="./results-page.html" className="dropdown-item">
-              Pantalones
-            </a>
-            <a href="./results-page.html" className="dropdown-item">
-              Sueters
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Zapatos
-            </a>
-            <hr />
-            <a href="../results-page.html" className="dropdown-item">
-              Bebes
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Caballero
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Dama
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Niña
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Niño
-            </a>
-            <hr />
-            <a href="../results-page.html" className="dropdown-item">
-              Primavera-Verano
-            </a>
-            <a href="../results-page.html" className="dropdown-item">
-              Otoño-Invierno
-            </a>
-          </div>
-        </div>
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu className="dropdown-menu nav-drop">
+            <Dropdown.Item href="./results-page.html">Blusas</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Camisas</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Interior</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Pantalones</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Sueters</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Zapatos</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Bebes</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Caballero</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Dama</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Niña</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Niño</Dropdown.Item>
+            <Dropdown.Item href="#/action-3"> Primavera-Verano</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Otoño-Invierno</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
         <input
           type="text"
           className="form-control"
