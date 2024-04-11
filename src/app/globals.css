@@ -69,6 +69,13 @@ footer {
   color: #888;
 }
 
+#dropdown-basic {
+  background-color: white;
+  color: #888;
+  border-color: white;
+  border-radius: 0px;
+}
+
 .div-head {
   font-family: "Helvetica Light", Helvetica, sans-serif;
   background-color: #383838; /* BLACK COLOR */

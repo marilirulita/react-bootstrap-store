@@ -141,8 +141,8 @@ export default function NavBar() {
     </div>
     <form className="form-inline" action="./results-page.html" method="get">
       <div className="input-group mb-1 mx-2">
-        <Dropdown className="input-group-prepend">
-          <Dropdown.Toggle id="dropdown-basic" className="dropdown-toggle but-drop">
+        <Dropdown>
+          <Dropdown.Toggle id="dropdown-basic">
             Todos los productos
           </Dropdown.Toggle>
 
