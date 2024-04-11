@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import Dropdown from 'react-bootstrap/Dropdown';
 import data from "./data";
 import useScreenSize from "@/components/screenSize";
 
@@ -44,13 +46,10 @@ export default function BestSellerCarousel() {
     }
   };
 
-  // este loop creara cada slice dependiendo del tamano de la base de datos y del screen size
-
-  // esta variable es un contador para el slice que se requiere obtener
-  let slicenum = 0;
-  // esta variable sigue el conteo de cuantas columnas iran dentro del row
-  let counter = 0;
-  // este loop crea cada una de as targetas en su respectiva row con su columna
+  // esta variable es un contador de inicio el producto que se mostrara
+  let itemInic = 0;
+  // esta variable es un contador final del producto que se mostrara
+  let itemFinal = 0;
 
   return (
     <section className="container-fluid py-3">
@@ -66,75 +65,67 @@ export default function BestSellerCarousel() {
         data-bs-interval="false"
       >
         <div className="carousel-inner" id="products-inner">
-          {/* crea cada slice segun las divisiones necesarias */}
-          {[...Array(carouselItem).keys()].map((e) => (
-            <div
-              key={"item" + e}
-              className={"carousel-item " + (e === 0 ? "active" : "")}
-            >
-              <div className="row">
-                {/* buscar dentro del data array elementos especificos */}
-                {data.slice(0, 3).map((e, i) => (
-                  <div key={"col" + i} className={"col-" + colnumsize}>
-                    <div className="card">
-                      <div className="embed-responsive embed-responsive-1by1">
-                        <a href="#">
-                          <Image
-                            width={200}
-                            height={200}
-                            src="/logo1.png"
-                            alt="logo image"
-                            className="embed-responsive-item"
-                          />
-                        </a>
-                      </div>
-                      <div className="card-body clearfix prod-desc">
-                        <h4 className="card-title m-0">{e.tittle}</h4>
-                        <p className="card-text">{e.notes}</p>
-                        <h5 className="card-text float-right">${e.price}</h5>
-                        <button
-                          className="navbar-toggler"
-                          type="button"
-                          data-toggle="collapse"
-                          data-target="#collapsibleNavbar"
-                        >
-                          <span
-                            className="btn text-secondary border font-weight-bold"
+          {/* este loop creara cada slice dependiendo del tamano de la base de datos y del screen size */}
+          {[...Array(carouselItem).keys()].map((e) => {
+            e === 0 ? itemInic = 0 : itemInic = itemFinal
+            e === 0 ? itemFinal = colNum : itemFinal = itemFinal + colNum
+            console.log(itemInic, itemFinal)
+            return (
+              <div
+                key={"item" + e}
+                className={"carousel-item " + (e === 0 ? "active" : "")}
+              >
+                <div className="row">
+                  {/* este loop crea cada una de las targetas en su respectiva row con su columna */}
+
+                  {data.slice(itemInic, itemFinal).map((e, i) => (
+                    <div key={"col" + i} className={"col-" + colnumsize}>
+                      <div className="card">
+                        <div className="embed-responsive embed-responsive-1by1">
+                          <Link href="/" className="d-flex justify-center">
+                            <Image
+                              width={230}
+                              height={200}
+                              src={e.img[0]}
+                              alt={e.notes}
+                              className="embed-responsive-item"
+                            />
+                          </Link>
+                        </div>
+                        <div className="card-body clearfix prod-desc">
+                          <h4 className="card-title m-0">{e.tittle}</h4>
+                          <p className="card-text">{e.notes}</p>
+                          <h5 className="card-text float-right">${e.price}</h5>
+
+                          <Dropdown>
+                            <Dropdown.Toggle
+                            className="btn border font-weight-bold"  
                             data-toggle="tooltip"
                             title="More"
-                          >
-                            +
-                          </span>
-                        </button>
-                        <div
-                          className="collapse navbar-collapse w-100"
-                          id="collapsibleNavbar"
-                        >
-                          <ul className="navbar-nav nav-top w-100">
-                            <li>
-                              <a href="#" className="px-2 text-nowrap">
-                                Agregar a carrito
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#" className="px-2 text-nowrap">
-                                Enviar un mensaje
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#" className="px-2 text-nowrap">
-                                Mas Detalles
-                              </a>
-                            </li>
-                          </ul>
+                            variant="dark" 
+                            id="dropdown-basic"
+                            >
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-1">
+                                  Agregar a carrito
+                              </Dropdown.Item>
+                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-2">
+                              Enviar un mensaje
+                              </Dropdown.Item>
+                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-3">
+                              Mas Detalles
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                          
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );})}
         </div>
         {/* Left and right controls */}
         <button
