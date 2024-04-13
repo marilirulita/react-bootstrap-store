@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Whatsapp from "./ui/whatsapp"
 import BootstrapClient from '@/components/bootstrapClient';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       backgroundImage: 'url("/images/bgflowersblue.jpg")',
       backgroundSize: "contain"
     }}>{children}
+      <Whatsapp />
       <BootstrapClient />
       </body>
     </html>
