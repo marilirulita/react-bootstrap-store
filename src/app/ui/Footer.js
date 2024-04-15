@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -157,22 +161,22 @@ export default function Footer() {
         <ul className="social-div p-0">
           <li className="mx-3">
             <a href="#" data-toggle="tooltip" title="Facebook">
-              <i className="fab fa-facebook fa-2x" />
+            <FaFacebook />
             </a>
           </li>
           <li className="mx-3">
             <a href="#" data-toggle="tooltip" title="Twitter">
-              <i className="fab fa-twitter-square fa-2x" />
+            <FaTwitterSquare />
             </a>
           </li>
           <li className="mx-3">
             <a href="#" data-toggle="tooltip" title="Instagram">
-              <i className="fab fa-instagram-square fa-2x" />
+            <FaInstagramSquare />
             </a>
           </li>
           <li className="mx-3">
             <a href="#" data-toggle="tooltip" title="Youtube">
-              <i className="fab fa-youtube fa-2x" />
+            <FaYoutube />
             </a>
           </li>
         </ul>

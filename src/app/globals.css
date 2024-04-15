@@ -37,13 +37,8 @@ body h2 {
 body h3 {
   color: #383838;
   font-size: 19px;
-  padding-bottom: 15px;
-}
-
-h3 i {
-  color: #888;
-  font-size: 25px;
-  padding-right: 10px;
+  margin: 5px;
+  padding-left: 5px;
 }
 
 body h4 {
@@ -119,7 +114,36 @@ footer {
   color: #d35266;
 }
 
-.div-head a:hover {
+.div-head li:hover {
+  background-color: #383838;
+  color: #fff;
+}
+.nav-item {
+  color: #383838;
+}
+
+path {
+  fill: inherit !important; 
+}
+
+svg {
+  width: auto !important;
+  filter: none !important;
+}
+
+.div-head svg {
+  font-size: 25px;
+}
+
+.social-div svg,
+.best-seller svg {
+  font-size: 35px;
+}
+
+
+
+.div-head a:hover,
+footer a:hover {
   color: #d35266; /* Red color */
 }
 
@@ -143,20 +167,6 @@ footer {
   border: 1px solid #383838;
   border-radius: 2px;
   padding: 0 25px;
-}
-
-.nav-top li {
-  padding: 7px;
-  color: #383838;
-}
-
-.nav-top li:hover {
-  background-color: #383838;
-  color: #fff;
-}
-
-.nav-top a:hover {
-  color: #fff;
 }
 
 .nav-drop a:hover {
@@ -294,9 +304,10 @@ footer {
 }
 
 @media screen and (max-width: 760px) {
-  .div-head i {
+  .nav-item {
     font-size: 25px;
   }
+
   .footer-up-med {
     flex-direction: column;
   }
@@ -362,7 +373,7 @@ footer {
     height: 350px;
   }
 
-  .dropdown-menu {
+  .dropdown-menu-nav {
     height: 250px ;
   }
 

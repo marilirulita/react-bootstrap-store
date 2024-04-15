@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import Dropdown from "react-bootstrap/Dropdown";
+import { FaHome } from "react-icons/fa";
+import { FaExpand } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 export default function NavBar() {
   return (
@@ -49,11 +54,11 @@ export default function NavBar() {
                     <li className="nav-item">
                       <a
                         href="./index.html"
-                        className="nav-link text-uppercase text-nowrap"
+                        className="nav-link text-uppercase text-nowrap d-flex"
                         data-toggle="tooltip"
                         title="Home"
                       >
-                        <i className="fas fa-home" />
+                        <FaHome />
                         <span className="px-lg-3 d-sm-none d-lg-inline">
                           Inicio
                         </span>
@@ -66,7 +71,7 @@ export default function NavBar() {
                         data-toggle="tooltip"
                         title="Collections"
                       >
-                        <i className="fas fa-expand" />
+                        <FaExpand />
                         <span className="px-lg-3 d-sm-none d-lg-inline">
                           Catalogo
                         </span>
@@ -79,7 +84,7 @@ export default function NavBar() {
                         data-toggle="tooltip"
                         title="Shop"
                       >
-                        <i className="fas fa-shopping-cart" />
+                        <FaShoppingCart />
                         <span className="px-lg-3 d-sm-none d-lg-inline">
                           Lista de Compra
                         </span>
@@ -104,7 +109,7 @@ export default function NavBar() {
                         data-toggle="tooltip"
                         title="Messages"
                       >
-                        <i className="far fa-envelope" />
+                        <FaEnvelope />
                         <span className="text-capitalize pl-2 d-sm-none">
                           Messages
                         </span>
@@ -120,7 +125,7 @@ export default function NavBar() {
                         <span className="text-capitalize pr-2 d-lg-none d-xl-inline">
                           your name
                         </span>
-                        <i className="fas fa-user" />
+                        <FaUser />
                       </a>
                     </li>
                   </ul>

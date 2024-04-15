@@ -5,6 +5,7 @@ import Link from "next/link";
 import Dropdown from 'react-bootstrap/Dropdown';
 import data from "./data";
 import useScreenSize from "@/components/screenSize";
+import { FaRegSmileBeam } from "react-icons/fa";
 
 export default function BestSellerCarousel() {
   // primero tengo que saber el screen zise, par saber cuantas columnas tendra cada slise del carrusel
@@ -52,12 +53,12 @@ export default function BestSellerCarousel() {
   let itemFinal = 0;
 
   return (
-    <section className="container-fluid py-3">
+    <section className="container-fluid py-3 best-seller">
       {/* Best seller, camisas */}
-      <h3 className="my-4 border-bottom">
-        <i className="far fa-smile-beam" />
-        Varios
-      </h3>
+      <div className="my-4 border-bottom d-flex pb-3">
+        <FaRegSmileBeam/>
+        <h3>Varios</h3>
+      </div>
       <div
         id="myCarousel"
         className="carousel slide px-5"
@@ -106,7 +107,7 @@ export default function BestSellerCarousel() {
                             id="dropdown-basic"
                             >
                             </Dropdown.Toggle>
-                            <Dropdown.Menu>
+                            <Dropdown.Menu className="nav-drop">
                               <Dropdown.Item className="px-2 text-nowrap" href="#/action-1">
                                   Agregar a carrito
                               </Dropdown.Item>
