@@ -2,6 +2,7 @@
 
 import data from "@/utils/data";
 import Image from "next/image";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function FavoriteCarrousel() {
   const toggleCarousel = (action) => {
@@ -21,7 +22,7 @@ export default function FavoriteCarrousel() {
           <div class="col-sm-6 p-0 d-flex justify-content-center">
             <Image
               src={e.img[0]}
-              className="img-fluid rounded-start"
+              className="img-fluid rounded-start w-100 h-100"
               width={300}
               height={200}
               alt={e.tittle}
@@ -36,7 +37,7 @@ export default function FavoriteCarrousel() {
               </span>
               <form className="form-inline" action="index.html" method="post">
                 <div className="input-group mt-3 mb-3">
-                  <div className="input-group-prepend">
+                  <div className="input-group-prepend me-1">
                     <button
                       type="button"
                       name="button"
@@ -52,7 +53,7 @@ export default function FavoriteCarrousel() {
                       data-toggle="tooltip"
                       title="Add to cart"
                     >
-                      <i className="fas fa-shopping-cart pr-2"></i>
+                      <FaShoppingCart className="me-2 ms-1" />
                       <span className="text-white d-none d-sm-inline">
                         Carrito
                       </span>
