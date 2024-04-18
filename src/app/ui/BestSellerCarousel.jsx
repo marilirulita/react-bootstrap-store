@@ -89,7 +89,7 @@ export default function BestSellerCarousel() {
                               height={200}
                               src={e.img[0]}
                               alt={e.notes}
-                              className="embed-responsive-item"
+                              className="embed-responsive-item w-100"
                             />
                           </Link>
                         </div>

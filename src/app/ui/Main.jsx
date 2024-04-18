@@ -6,7 +6,6 @@ export default function Main() {
     <div className="container-fluid p-0">
       <FavoriteCarrousel />
       <BestSellerCarousel />
-      
     </div>
   );
 }

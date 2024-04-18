@@ -5,6 +5,7 @@ import "./globals.css";
 //import Whatsapp from "./ui/whatsapp"
 import BootstrapClient from '@/components/bootstrapClient';
 import NavBar from './ui/Navbar';
+import Footer from "./ui/Footer";
 // import Provider from '@/components/provider';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     }}>{/* <Provider> */}
       <NavBar />
       {children}
+      <Footer />
  {/*      <Whatsapp /> */}
       <BootstrapClient />
       {/* </Provider> */}
