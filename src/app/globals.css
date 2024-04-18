@@ -56,7 +56,7 @@ main {
 }
 
 section {
-  background-color:#f3f3f3;
+  background-color: #f3f3f3;
   margin-top: 15px;
 }
 
@@ -66,6 +66,7 @@ footer {
 }
 
 #dropdown-basic {
+  width: 100%;
   background-color: white;
   color: #888;
   border-color: white;
@@ -101,9 +102,10 @@ footer {
 }
 
 .header-style input {
-  border: 1px solid #fff;
-  margin-right: 2px;
+  margin: 5px 0 0 0;
   color: #888;
+  border-radius: 0;
+  border: none;
 }
 
 .gray-color {
@@ -123,7 +125,7 @@ footer {
 }
 
 path {
-  fill: inherit !important; 
+  fill: inherit !important;
 }
 
 svg {
@@ -139,8 +141,6 @@ svg {
 .best-seller svg {
   font-size: 35px;
 }
-
-
 
 .div-head a:hover,
 footer a:hover {
@@ -214,6 +214,8 @@ footer a:hover {
 
 .footer-up-med {
   display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer-up-elem {
@@ -250,12 +252,15 @@ footer a:hover {
 
 .footer-options {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
   margin-left: 5px;
+  flex-direction: column;
 }
 
 .options {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 5px;
 }
@@ -301,6 +306,17 @@ footer a:hover {
   .footer {
     height: 540px;
   }
+
+  .footer-options {
+    flex-direction: column;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .footer-options {
+    flex-direction: row;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -308,20 +324,31 @@ footer a:hover {
     font-size: 25px;
   }
 
-  .footer-up-med {
-    flex-direction: column;
-  }
-
   .footer {
     height: 800px;
+  }
+
+  .footer-options {
+    flex-direction: row;
+  }
+}
+
+// md size bootstrap
+@media screen and (min-width: 768px) {
+  .footer-up button {
+    font-size: 10px;
+    padding: 5px;
   }
 }
 
 @media screen and (max-width: 576px) {
-
   .carrousel_favorites {
     height: 680px;
-  } 
+  }
+
+  .footer-up-med {
+    flex-direction: column;
+  }
 
   h1 {
     font-size: 2rem !important;
@@ -347,25 +374,23 @@ footer a:hover {
   .footer {
     height: 850px;
   }
+}
 
+@media screen and (max-width: 450px) {
+  .icons-group {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .footer-options {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 440px) {
-
   .brand-title {
     display: none !important;
   }
-
-}
-
-
-@media screen and (max-width: 350px) {
-
-  .icons-group {
-    flex-direction: column;
-  align-items: flex-start !important;
-  }
-
 }
 
 @media screen and (max-width: 260px) {
@@ -374,9 +399,21 @@ footer a:hover {
   }
 
   .dropdown-menu-nav {
-    height: 250px ;
+    height: 250px;
   }
 
+  .social-div li {
+    margin: 0;
+  }
+
+  .options {
+    flex-direction: column;
+  }
+
+  .footer-links ul,
+  .footer-navig ul {
+    padding: 0;
+  }
 }
 
 .brand-title {
@@ -394,7 +431,9 @@ footer a:hover {
   min-height: 550px;
 }
 
- .slides_best_seller, .slides_product_month, .slides_new {
+.slides_best_seller,
+.slides_product_month,
+.slides_new {
   width: 100%;
   height: 600px;
 }
@@ -404,7 +443,8 @@ footer a:hover {
   min-height: 400px;
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
   width: 5% !important;
 }
 
@@ -417,12 +457,12 @@ footer a:hover {
 #whatsapp {
   position: fixed;
   bottom: 20px;
-  right:20px;
+  right: 20px;
 }
 
 svg {
   width: 80px;
-  filter: drop-shadow(0 1px 4px rgba(0,0,0,.4));
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
 }
 
 circle {
