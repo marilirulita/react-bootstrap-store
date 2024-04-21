@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from "next/font/google";
 import "./globals.css";
-//import Whatsapp from "./ui/whatsapp"
+import Whatsapp from "./ui/whatsapp"
 import BootstrapClient from '@/components/bootstrapClient';
 import NavBar from './ui/Navbar';
 import Footer from "./ui/Footer";
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <NavBar />
       {children}
       <Footer />
- {/*      <Whatsapp /> */}
+      <Whatsapp />
       <BootstrapClient />
       {/* </Provider> */}
       </body>

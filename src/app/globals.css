@@ -391,6 +391,9 @@ footer a:hover {
   .brand-title {
     display: none !important;
   }
+  .header-style h1 {
+    margin-right: 60px !important;
+  }
 }
 
 @media screen and (max-width: 260px) {
@@ -456,19 +459,17 @@ footer a:hover {
 
 #whatsapp {
   position: fixed;
-  bottom: 20px;
+  top: 80px;
   right: 20px;
 }
 
-svg {
-  width: 80px;
+#whatsapp img {
   filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+  width: 60px;
+  height: 60px;
+  z-index: 100;
 }
 
-circle {
-  fill: #25d366;
-}
-
-path {
-  fill: #fff;
+#whatsapp img:hover {
+  transform: scale(1.5)
 }
