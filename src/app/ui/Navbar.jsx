@@ -7,6 +7,7 @@ import { FaExpand } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import Search from "./search";
 
 export default function NavBar() {
   return (
@@ -169,16 +170,8 @@ export default function NavBar() {
             method="get"
           >
             <div className="d-flex flex-column flex-md-row">
-              <input
-                type="text"
-                className="form-control w-100 m-md-0"
-                placeholder="¿Que estas buscando?"
-              />
-              <input
-                type="text"
-                className="form-control w-100 m-md-0"
-                placeholder="Lugar"
-              />
+              <Search placeholder="¿Que estas buscando?" />
+              <Search placeholder="Lugar" />
               <button
                 className="but-search ml-2 w-100 py-2 mt-1 mt-md-0"
                 type="submit"

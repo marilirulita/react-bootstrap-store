@@ -1,5 +1,6 @@
 import data from "@/utils/data";
 import Image from "next/image";
+import Search from "../ui/search";
 
 export default function Page() {
   const categorias = [
