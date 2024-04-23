@@ -9,9 +9,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import Search from "./search";
 
-export default function NavBar({ searchParams }) {
-  const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
+export default function NavBar() {
 
   return (
     <header>

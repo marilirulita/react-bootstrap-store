@@ -70,7 +70,6 @@ export default function BestSellerCarousel() {
           {[...Array(carouselItem).keys()].map((e) => {
             e === 0 ? itemInic = 0 : itemInic = itemFinal
             e === 0 ? itemFinal = colNum : itemFinal = itemFinal + colNum
-            console.log(itemInic, itemFinal)
             return (
               <div
                 key={"item" + e}

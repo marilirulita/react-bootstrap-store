@@ -1,8 +1,15 @@
 import data from "@/utils/data";
 import Image from "next/image";
-import Search from "../ui/search";
 
-export default function Page() {
+export default function Page({ searchParams }) {
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const offset = currentPage * 6;
+  const filteredProduc = data.filter(e => {
+    return e.tittle.toLowerCase().includes(query.toLowerCase()) || e.notes.toLowerCase().includes(query.toLowerCase());
+  });
+
   const categorias = [
     "blusas",
     "camisas",
@@ -72,11 +79,12 @@ export default function Page() {
         <br />
 
         <div class="product-search border-top">
+          
+          <div id="product-results">
           <p class="pt-3 pl-3 font-weight-bold">
             {data.length} result for ... example
           </p>
-          <div id="product-results">
-            {data.map((e, i) => (
+            {filteredProduc.slice(offset-6, offset).map((e, i) => (
               <div key={i + "product"} class="d-flex border mb-3">
                 <div class="embed-responsive embed-responsive-1by1 d-lg-none">
                   <Image
