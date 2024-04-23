@@ -9,7 +9,10 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import Search from "./search";
 
-export default function NavBar() {
+export default function NavBar({ searchParams }) {
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
+
   return (
     <header>
       {/* Header division */}
@@ -170,8 +173,8 @@ export default function NavBar() {
             method="get"
           >
             <div className="d-flex flex-column flex-md-row">
-              <Search placeholder="¿Que estas buscando?" />
-              <Search placeholder="Lugar" />
+              <Search placeholder="¿Que estas buscando?" query={'query'} />
+              <Search placeholder="Lugar" query={'lugar'} />
               <button
                 className="but-search ml-2 w-100 py-2 mt-1 mt-md-0"
                 type="submit"
