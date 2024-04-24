@@ -1,5 +1,6 @@
 import data from "@/utils/data";
 import Image from "next/image";
+import Pagination from "../ui/pagination";
 
 export default function Page({ searchParams }) {
   const query = searchParams?.query || '';
@@ -10,6 +11,7 @@ export default function Page({ searchParams }) {
     return e.tittle.toLowerCase().includes(query.toLowerCase()) || e.notes.toLowerCase().includes(query.toLowerCase());
   });
 
+  const totalPages = Math.ceil(filteredProduc.length / 6) || 1;
   const categorias = [
     "blusas",
     "camisas",
@@ -82,7 +84,7 @@ export default function Page({ searchParams }) {
           
           <div id="product-results">
           <p class="pt-3 pl-3 font-weight-bold">
-            {data.length} result for ... example
+            {filteredProduc.length} resultados para {query}
           </p>
             {filteredProduc.slice(offset-6, offset).map((e, i) => (
               <div key={i + "product"} class="d-flex border mb-3">
@@ -163,33 +165,7 @@ export default function Page({ searchParams }) {
           </div>
           
           {/* pagination */}
-          <nav aria-label="...">
-            <ul className="pagination justify-content-center">
-              <li className="page-item disabled">
-                <a className="page-link">Previous</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  1
-                </a>
-              </li>
-              <li className="page-item active" aria-current="page">
-                <a className="page-link" href="#">
-                  2
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  3
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <Pagination totalPages={totalPages}/>
         </div>
       </div>
     </main>
