@@ -18,7 +18,7 @@ export default function NavBar() {
       <div className="navbar navbar-expand-sm justify-content-around navbar-dark div-head fixed-top">
         <div className="container-fluid">
           <a
-            href="./index.html"
+            href="/"
             className="navbar-brand d-flex align-items-center"
             data-toggle="tooltip"
             title="Tienda de Segunda Mano"
@@ -55,7 +55,7 @@ export default function NavBar() {
               <ul className="navbar-nav align-items-sm-center align-items-start">
                 <li className="nav-item">
                   <a
-                    href="./index.html"
+                    href="/"
                     className="nav-link text-uppercase text-nowrap d-flex align-items-center"
                     data-toggle="tooltip"
                     title="Home"
@@ -68,7 +68,7 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="./results-page.html"
+                    href="./results"
                     className="nav-link text-uppercase text-nowrap d-flex align-items-center"
                     data-toggle="tooltip"
                     title="Collections"
@@ -81,7 +81,7 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="#"
+                    href="/"
                     className="nav-link text-uppercase text-nowrap d-flex align-items-center"
                     data-toggle="tooltip"
                     title="Shop"
@@ -110,6 +110,7 @@ export default function NavBar() {
                     className="nav-link text-uppercase d-flex align-items-end align-items-center"
                     data-toggle="tooltip"
                     title="Messages"
+                    target="_blank"
                   >
                     <FaEnvelope />
                     <span className="text-capitalize pl-2 d-sm-none ms-1">
@@ -119,7 +120,7 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="#"
+                    href="/"
                     className="nav-link text-uppercase text-nowrap d-flex align-items-center "
                     data-toggle="tooltip"
                     title="Profile"
@@ -167,7 +168,7 @@ export default function NavBar() {
           </Dropdown>
           <form
             className="form-inline"
-            action="./results-page.html"
+            action="./results"
             method="get"
           >
             <div className="d-flex flex-column flex-md-row">

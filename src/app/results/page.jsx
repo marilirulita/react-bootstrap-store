@@ -4,11 +4,12 @@ import Pagination from "../ui/pagination";
 
 export default function Page({ searchParams }) {
   const query = searchParams?.query || '';
+  const lugar = searchParams?.lugar || '';
   const currentPage = Number(searchParams?.page) || 1;
 
   const offset = currentPage * 6;
   const filteredProduc = data.filter(e => {
-    return e.tittle.toLowerCase().includes(query.toLowerCase()) || e.notes.toLowerCase().includes(query.toLowerCase());
+    return (e.tittle.toLowerCase().includes(query.toLowerCase()) || e.notes.toLowerCase().includes(query.toLowerCase())) && e.lugar.toLowerCase().includes(lugar.toLowerCase());
   });
 
   const totalPages = Math.ceil(filteredProduc.length / 6) || 1;
@@ -81,12 +82,11 @@ export default function Page({ searchParams }) {
         <br />
 
         <div class="product-search border-top">
-          
           <div id="product-results">
-          <p class="pt-3 pl-3 font-weight-bold">
-            {filteredProduc.length} resultados para {query}
-          </p>
-            {filteredProduc.slice(offset-6, offset).map((e, i) => (
+            <p class="pt-3 pl-3 font-weight-bold">
+              {filteredProduc.length} resultados para {query}
+            </p>
+            {filteredProduc.slice(offset - 6, offset).map((e, i) => (
               <div key={i + "product"} class="d-flex border mb-3">
                 <div class="embed-responsive embed-responsive-1by1 d-lg-none">
                   <Image
@@ -112,6 +112,13 @@ export default function Page({ searchParams }) {
                     <b>Condicion: </b>
                     {e.condition}
                   </span>
+                  <div>
+                    <span>
+                      <b>Lugar: </b>
+                      {e.lugar}
+                    </span>
+                  </div>
+
                   <form class="form-inline" action="index.html" method="post">
                     <div class="input-group mt-3 mb-3">
                       <button
@@ -124,8 +131,10 @@ export default function Page({ searchParams }) {
                       <button
                         class="navbar-toggler"
                         type="button"
-                        data-toggle="collapse"
-                        data-target="#collapsibleNavbar${i}"
+                        data-bs-toggle="collapse"
+                        data-bs-target={"#collapseResults" + i}
+                        aria-expanded="false"
+                        aria-controls={"collapseResults" + i}
                       >
                         <span
                           class="btn border text-secondary font-weight-bold"
@@ -135,11 +144,9 @@ export default function Page({ searchParams }) {
                           +
                         </span>
                       </button>
-                      <div
-                        class="collapse navbar-collapse"
-                        id="collapsibleNavbar${i}"
-                      >
-                        <ul class="navbar-nav nav-top">
+
+                      <div class="collapse navbar-collapse" id={"collapseResults" + i}>
+                      <ul class="navbar-nav nav-drop">
                           <li>
                             <a href="#" class="px-2">
                               Add to Collection
@@ -156,16 +163,16 @@ export default function Page({ searchParams }) {
                             </a>
                           </li>
                         </ul>
-                      </div>
+                    </div>
                     </div>
                   </form>
                 </div>
               </div>
             ))}
           </div>
-          
+
           {/* pagination */}
-          <Pagination totalPages={totalPages}/>
+          <Pagination totalPages={totalPages} />
         </div>
       </div>
     </main>

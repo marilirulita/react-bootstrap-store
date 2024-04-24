@@ -97,28 +97,43 @@ export default function BestSellerCarousel() {
                           <p className="card-text">{e.notes}</p>
                           <h5 className="card-text float-right">${e.price}</h5>
 
-                          <Dropdown>
-                            <Dropdown.Toggle
-                            className="btn border font-weight-bold"  
-                            data-toggle="tooltip"
-                            title="More"
-                            variant="dark" 
-                            id="dropdown-basic"
-                            >
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu className="nav-drop">
-                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-1">
-                                  Agregar a carrito
-                              </Dropdown.Item>
-                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-2">
-                              Enviar un mensaje
-                              </Dropdown.Item>
-                              <Dropdown.Item className="px-2 text-nowrap" href="#/action-3">
-                              Mas Detalles
-                              </Dropdown.Item>
-                            </Dropdown.Menu>
-                          </Dropdown>
-                          
+                          <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={"#collapseCarrousel" + i}
+                        aria-expanded="false"
+                        aria-controls={"collapseCarrousel" + i}
+                      >
+                        
+                        <span
+                          class="btn border text-secondary font-weight-bold"
+                          data-toggle="tooltip"
+                          title="More"
+                          variant="dark"
+                        >
+                          +
+                        </span>
+                      </button>
+                      <div class="collapse navbar-collapse" id={"collapseCarrousel" + i}>
+                      <ul class="navbar-nav nav-drop">
+                          <li>
+                            <a href="/" class="px-2">
+                              Add to Collection
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/" class="px-2">
+                              Send a Message
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/" class="px-2">
+                              More Details
+                            </a>
+                          </li>
+                        </ul>
+                    </div>
                         </div>
                       </div>
                     </div>

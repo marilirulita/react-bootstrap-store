@@ -15,8 +15,9 @@ const Pagination = ({ totalPages }) => {
 
   return (
     <nav aria-label="...">
-      <ul className="pagination justify-content-center">
-        <li className={"page-item " + (currentPage <= 1 ? "disabled" : "")}>
+      <ul className="pagination justify-content-center" >
+        <li className={"page-item " + (currentPage <= 1 ? "disabled" : "")}
+        >
           <a className="page-link" href={createPageURL(currentPage - 1)}>
             Previous
           </a>
