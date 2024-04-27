@@ -1,7 +1,9 @@
-'use client'
+'use client';
+
 import { useState, useEffect } from "react";
 
 export default function useScreenSize() {
+  
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 

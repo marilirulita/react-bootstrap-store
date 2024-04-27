@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Dropdown from 'react-bootstrap/Dropdown';
 import data from "@/utils/data";
 import useScreenSize from "@/components/screenSize";
 import { FaRegSmileBeam } from "react-icons/fa";

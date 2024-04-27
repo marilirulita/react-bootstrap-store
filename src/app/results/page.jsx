@@ -1,6 +1,8 @@
 import data from "@/utils/data";
 import Image from "next/image";
 import Pagination from "../ui/pagination";
+import { Suspense } from "react";
+import { InvoicesTableSkeleton } from "../ui/squeletons";
 
 export default function Page({ searchParams }) {
   const query = searchParams?.query || '';
@@ -82,6 +84,7 @@ export default function Page({ searchParams }) {
         <br />
 
         <div class="product-search border-top">
+          <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
           <div id="product-results">
             <p class="pt-3 pl-3 font-weight-bold">
               {filteredProduc.length} resultados para {query}
@@ -170,7 +173,7 @@ export default function Page({ searchParams }) {
               </div>
             ))}
           </div>
-
+          </Suspense>
           {/* pagination */}
           <Pagination totalPages={totalPages} />
         </div>
